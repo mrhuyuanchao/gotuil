@@ -116,8 +116,8 @@ func (c *Connection) LikeDeletes(key string) error {
 	if err != nil {
 		return err
 	}
-	for _, key := range keys {
-		_, err = c.Delete(key)
+	for _, item := range keys {
+		_, err = c.Delete(item)
 		if err != nil {
 			return err
 		}
