@@ -1,4 +1,4 @@
-package gotuil
+package goutil
 
 import "time"
 

@@ -1,4 +1,4 @@
-package gotuil
+package goutil
 
 import (
 	_ "github.com/denisenkom/go-mssqldb"
