@@ -48,7 +48,7 @@ func InitRedis(setting *RedisSetting) *Connection {
 }
 
 // SetString 写入字符串
-func (c *Connection) SetString(key, val string, exp int) error {
+func (c *Connection) SetString(key, val string, exp int64) error {
 	con := c.Conn.Get()
 	defer con.Close()
 	_, err := con.Do("SET", key, val)
@@ -59,7 +59,7 @@ func (c *Connection) SetString(key, val string, exp int) error {
 }
 
 // SetInterface 写入interface{}
-func (c *Connection) SetInterface(key string, data interface{}, exp int) error {
+func (c *Connection) SetInterface(key string, data interface{}, exp int64) error {
 	con := c.Conn.Get()
 	defer con.Close()
 	val, err := json.Marshal(data)
